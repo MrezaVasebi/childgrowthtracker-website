@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: 'Child Growth Analyst | Clear growth tracking for parents',
   description:
     'Track measurements, follow trusted growth charts, and create parent-friendly reports with Child Growth Analyst by Pacifica Analytic.',
+  icons: {
+    icon: '/app-icon.png',
+    apple: '/app-icon.png',
+  },
 };
 
 export default function RootLayout({
