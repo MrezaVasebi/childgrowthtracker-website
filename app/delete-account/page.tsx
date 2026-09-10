@@ -67,6 +67,62 @@ export default function DeleteAccountPage() {
           </a>
         </article>
       </section>
+      <section className="deletion-explainer" aria-label="Deletion details">
+        <article>
+          <p className="option-label">Your application data</p>
+          <h2>What will be deleted</h2>
+          <p>
+            When the recovery period ends, Child Growth Analyst permanently
+            removes the account information controlled by Pacifica Analytic,
+            including:
+          </p>
+          <ul>
+            <li>Your Child Growth Analyst sign-in account and profile.</li>
+            <li>Child profiles, measurements, notes, and profile images.</li>
+            <li>Saved Parent Reports and app-managed uploaded files.</li>
+            <li>
+              AI consent, usage, and other account-linked application records.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <p className="option-label">Important exceptions</p>
+          <h2>What is not deleted automatically</h2>
+          <p>Deleting your account does not:</p>
+          <ul>
+            <li>Cancel an active subscription or stop future store billing.</li>
+            <li>Delete exported PDFs or backup files saved outside the app.</li>
+            <li>
+              Immediately erase transaction records held independently by Apple,
+              Google Play, or RevenueCat.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <p className="option-label">Changing your mind</p>
+          <h2>How account restoration works</h2>
+          <p>
+            During the 14-day recovery period, sign in with the same account and
+            select <strong>Restore Account</strong>. The scheduled deletion is
+            cancelled and your retained cloud data is downloaded into a fresh
+            local workspace. After the deadline, restoration is no longer
+            available.
+          </p>
+        </article>
+        <article>
+          <p className="option-label">Requesting help</p>
+          <h2>If you cannot access the app</h2>
+          <p>
+            Send the request from the email address connected to your account.
+            Include “Child Growth Analyst account deletion request” in the
+            subject. We may ask you to verify account ownership before the
+            request is processed.
+          </p>
+          <a className="primary-link" href={requestLink}>
+            Contact {supportEmail} →
+          </a>
+        </article>
+      </section>
       <section className="deletion-details">
         <div>
           <CheckCircle2 />

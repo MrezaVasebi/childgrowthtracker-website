@@ -658,6 +658,35 @@ h1 {
 .deletion-notice + .deletion-options {
   margin-top: 20px;
 }
+.deletion-explainer {
+  width: min(1000px, calc(100% - 40px));
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.deletion-explainer article {
+  padding: clamp(28px, 4vw, 40px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: #f7fafc;
+}
+.deletion-explainer h2 {
+  margin-bottom: 14px;
+  font-size: 24px;
+}
+.deletion-explainer p,
+.deletion-explainer li {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.deletion-explainer ul {
+  margin-bottom: 0;
+  padding-left: 21px;
+}
+.deletion-explainer li + li {
+  margin-top: 8px;
+}
 .deletion-options article,
 .contact-card {
   padding: clamp(28px, 4vw, 44px);
@@ -894,6 +923,9 @@ summary:focus-visible {
   .deletion-timeline {
     grid-template-columns: 1fr;
   }
+  .deletion-explainer {
+    grid-template-columns: 1fr;
+  }
   .legal-layout aside,
   .contact-card {
     position: static;
@@ -987,6 +1019,7 @@ summary:focus-visible {
   }
   .legal-layout,
   .deletion-notice,
+  .deletion-explainer,
   .deletion-options,
   .support-layout,
   .deletion-details {
