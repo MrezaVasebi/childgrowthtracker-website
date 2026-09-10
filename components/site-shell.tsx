@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
-export const supportEmail = 'pacifica.analytic@gmail.com';
+export const supportEmail = 'support@childgrowthanalyst.com';
 
 export function SiteHeader() {
   return (
