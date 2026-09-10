@@ -630,6 +630,34 @@ h1 {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+.deletion-notice {
+  width: min(1000px, calc(100% - 40px));
+  margin: 84px auto 0;
+  padding: 24px 28px;
+  border: 1px solid #f0c36b;
+  border-radius: 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  color: #70490a;
+  background: #fff8e8;
+}
+.deletion-notice > svg {
+  width: 22px;
+  min-width: 22px;
+  margin-top: 3px;
+}
+.deletion-notice h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+.deletion-notice p {
+  margin: 0;
+  line-height: 1.65;
+}
+.deletion-notice + .deletion-options {
+  margin-top: 20px;
+}
 .deletion-options article,
 .contact-card {
   padding: clamp(28px, 4vw, 44px);
@@ -699,12 +727,50 @@ h1 {
 .deletion-details h2 {
   font-size: 27px;
 }
-.deletion-details li,
 .deletion-details p {
   line-height: 1.7;
 }
-.deletion-details li {
-  margin-bottom: 9px;
+.deletion-timeline {
+  margin: 34px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  list-style: none;
+}
+.deletion-timeline li {
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+}
+.deletion-timeline li > span {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background: #8ee1d6;
+  font-size: 13px;
+  font-weight: 800;
+}
+.deletion-timeline h3,
+.deletion-retention h3 {
+  margin: 0 0 8px;
+  color: white;
+  font-size: 17px;
+}
+.deletion-timeline p,
+.deletion-retention p {
+  margin: 0;
+  color: #b8c8d4;
+}
+.deletion-retention {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .support-layout {
@@ -825,6 +891,9 @@ summary:focus-visible {
     grid-template-columns: 1fr;
     gap: 46px;
   }
+  .deletion-timeline {
+    grid-template-columns: 1fr;
+  }
   .legal-layout aside,
   .contact-card {
     position: static;
@@ -917,6 +986,7 @@ summary:focus-visible {
     font-size: 40px;
   }
   .legal-layout,
+  .deletion-notice,
   .deletion-options,
   .support-layout,
   .deletion-details {

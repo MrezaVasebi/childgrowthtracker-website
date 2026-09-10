@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { CheckCircle2, Mail, Smartphone } from 'lucide-react';
+import { AlertTriangle, CheckCircle2, Mail, Smartphone } from 'lucide-react';
 import {
   PageIntro,
   SiteFooter,
@@ -21,8 +21,19 @@ export default function DeleteAccountPage() {
       <PageIntro
         eyebrow="Account deletion"
         title="You can leave—and take control of your data."
-        description="Delete your account in the app or contact us when you cannot access it."
+        description="Request deletion in the app or contact support if you cannot sign in. You have 14 days to restore your account before app-controlled data is permanently deleted."
       />
+      <section className="deletion-notice" aria-labelledby="before-deleting">
+        <AlertTriangle aria-hidden="true" />
+        <div>
+          <h2 id="before-deleting">Before you delete your account</h2>
+          <p>
+            Export any records you want to keep. An internet connection is
+            required to submit the request, and account deletion does not cancel
+            an Apple App Store or Google Play subscription.
+          </p>
+        </div>
+      </section>
       <section className="deletion-options">
         <article>
           <span className="option-icon">
@@ -61,28 +72,48 @@ export default function DeleteAccountPage() {
           <CheckCircle2 />
           <h2>What happens next</h2>
         </div>
-        <ul>
+        <ol className="deletion-timeline">
           <li>
-            Account-owned data is removed from the device when the request is
-            accepted.
+            <span>1</span>
+            <div>
+              <h3>Deletion requested</h3>
+              <p>
+                Your account is marked for deletion, you are signed out, and
+                that account’s local data is cleared from this device.
+              </p>
+            </div>
           </li>
           <li>
-            A 14-day recovery window begins. Signing back in during this period
-            may restore the account.
+            <span>2</span>
+            <div>
+              <h3>Restore within 14 days</h3>
+              <p>
+                Your account and cloud data remain protected during the recovery
+                period. Sign in again during these 14 days and choose
+                <strong> Restore Account</strong> to recover the account.
+              </p>
+            </div>
           </li>
           <li>
-            After 14 days, app-controlled authentication, database, and storage
-            data is permanently deleted.
+            <span>3</span>
+            <div>
+              <h3>Permanent deletion</h3>
+              <p>
+                After 14 days, app-controlled authentication, database, and
+                storage data is permanently deleted and cannot be restored.
+              </p>
+            </div>
           </li>
-          <li>
-            Synchronization markers may remain up to 90 days; privacy-safe
-            aggregate cleanup metrics may remain up to 180 days.
-          </li>
-          <li>
-            Store and RevenueCat purchase records may remain under their legal
-            obligations.
-          </li>
-        </ul>
+        </ol>
+        <div className="deletion-retention">
+          <h3>Records retained separately</h3>
+          <p>
+            Synchronization deletion markers may remain for up to 90 days, and
+            privacy-safe aggregate cleanup metrics for up to 180 days. Apple,
+            Google Play, and RevenueCat may retain purchase records according to
+            their own legal obligations and policies.
+          </p>
+        </div>
         <p>
           <strong>Important:</strong> account deletion does not cancel Google
           Play or Apple subscription billing. Cancel the subscription separately
