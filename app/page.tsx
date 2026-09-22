@@ -1,3 +1,5 @@
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-shell";
 import {
   Baby,
   BarChart3,
@@ -7,31 +9,30 @@ import {
   Gauge,
   LockKeyhole,
   Ruler,
-} from 'lucide-react';
-import { SiteFooter, SiteHeader } from '@/components/site-shell';
-import Image from 'next/image';
-import Link from 'next/link';
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const features = [
   {
     icon: Ruler,
-    title: 'Every measurement in one place',
-    text: 'Record weight, height, head circumference, BMI, dates, notes, and milestones without losing the story between visits.',
+    title: "Every measurement in one place",
+    text: "Record weight, height, head circumference, BMI, dates, notes, and milestones without losing the story between visits.",
   },
   {
     icon: BarChart3,
-    title: 'Charts with useful context',
-    text: 'Follow WHO percentiles, compare measurements over time, and use corrected age when a child was born early.',
+    title: "Charts with useful context",
+    text: "Follow WHO percentiles, compare measurements over time, and use corrected age when a child was born early.",
   },
   {
     icon: FileText,
-    title: 'Reports made for conversations',
-    text: 'Choose a period, bring the important measurements together, and save or share a clear parent report.',
+    title: "Reports made for conversations",
+    text: "Choose a period, bring the important measurements together, and save or share a clear parent report.",
   },
   {
     icon: BrainCircuit,
-    title: 'Optional AI growth assistant',
-    text: 'Ask for an educational summary of selected synchronized measurements, with separate consent and clear usage limits.',
+    title: "Optional AI growth assistant",
+    text: "Ask for an educational summary of selected synchronized measurements, with separate consent and clear usage limits.",
   },
 ];
 

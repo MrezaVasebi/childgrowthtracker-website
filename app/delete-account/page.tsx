@@ -1,16 +1,12 @@
-import type { Metadata } from 'next';
-import { AlertTriangle, CheckCircle2, Mail, Smartphone } from 'lucide-react';
-import {
-  PageIntro,
-  SiteFooter,
-  SiteHeader,
-  supportEmail,
-} from '@/components/site-shell';
+import { SiteHeader } from "@/components/site-header";
+import { PageIntro, SiteFooter, supportEmail } from "@/components/site-shell";
+import { AlertTriangle, CheckCircle2, Mail, Smartphone } from "lucide-react";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Delete Your Account | Child Growth Analyst',
+  title: "Delete Your Account | Child Growth Analyst",
   description:
-    'Request deletion of a Child Growth Analyst account and associated application data.',
+    "Request deletion of a Child Growth Analyst account and associated application data.",
 };
 
 export default function DeleteAccountPage() {

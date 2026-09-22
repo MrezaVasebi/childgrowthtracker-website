@@ -1,38 +1,34 @@
-import type { Metadata } from 'next';
-import { Mail, MessageCircleQuestion } from 'lucide-react';
-import {
-  PageIntro,
-  SiteFooter,
-  SiteHeader,
-  supportEmail,
-} from '@/components/site-shell';
+import { SiteHeader } from "@/components/site-header";
+import { PageIntro, SiteFooter, supportEmail } from "@/components/site-shell";
+import { Mail, MessageCircleQuestion } from "lucide-react";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Support | Child Growth Analyst',
+  title: "Support | Child Growth Analyst",
   description:
-    'Get help with Child Growth Analyst profiles, charts, subscriptions, privacy, and account access.',
+    "Get help with Child Growth Analyst profiles, charts, subscriptions, privacy, and account access.",
 };
 
 const faqs = [
   [
-    'Is Child Growth Analyst medical advice?',
-    'No. The app provides educational growth information and organizational tools. Discuss health and development concerns with a qualified healthcare professional.',
+    "Is Child Growth Analyst medical advice?",
+    "No. The app provides educational growth information and organizational tools. Discuss health and development concerns with a qualified healthcare professional.",
   ],
   [
-    'Where is Guest Mode data stored?',
-    'Guest Mode profiles and measurements remain on the device. Creating an account enables cloud synchronization after you choose how to handle eligible Guest data.',
+    "Where is Guest Mode data stored?",
+    "Guest Mode profiles and measurements remain on the device. Creating an account enables cloud synchronization after you choose how to handle eligible Guest data.",
   ],
   [
-    'How do I restore Premium?',
-    'Sign in with the same application account, connect to the internet, and use Restore Purchases on the Premium screen if the entitlement does not refresh automatically.',
+    "How do I restore Premium?",
+    "Sign in with the same application account, connect to the internet, and use Restore Purchases on the Premium screen if the entitlement does not refresh automatically.",
   ],
   [
-    'Does deleting my account cancel Premium?',
-    'No. Subscription billing is managed by Google Play or Apple and must be cancelled separately in the store account that made the purchase.',
+    "Does deleting my account cancel Premium?",
+    "No. Subscription billing is managed by Google Play or Apple and must be cancelled separately in the store account that made the purchase.",
   ],
   [
-    'What information is sent for AI analysis?',
-    'Only selected deterministic measurement facts are sent after explicit consent. Child names, notes, photos, parent details, and account or subscription identifiers are excluded.',
+    "What information is sent for AI analysis?",
+    "Only selected deterministic measurement facts are sent after explicit consent. Child names, notes, photos, parent details, and account or subscription identifiers are excluded.",
   ],
 ];
 

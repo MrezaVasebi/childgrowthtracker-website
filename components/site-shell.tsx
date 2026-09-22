@@ -1,29 +1,10 @@
-import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import type { ReactNode } from 'react';
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import type { ReactNode } from "react";
+import { SiteHeader } from "./site-header";
 
-export const supportEmail = 'support@childgrowthanalyst.com';
-
-export function SiteHeader() {
-  return (
-    <header className="site-header">
-      <Link className="brand" href="/" aria-label="Child Growth Analyst home">
-        <Image src="/app-icon.png" alt="" width={40} height={40} />
-        <span>Child Growth Analyst</span>
-      </Link>
-      <nav aria-label="Main navigation">
-        <Link href="/#features">Features</Link>
-        <Link href="/#how-it-works">How it works</Link>
-        <Link href="/privacy">Privacy</Link>
-        <Link href="/support">Support</Link>
-      </nav>
-      <Link className="header-cta" href="/#availability">
-        Get the app
-      </Link>
-    </header>
-  );
-}
+export const supportEmail = "support@childgrowthanalyst.com";
 
 export function SiteFooter() {
   return (
