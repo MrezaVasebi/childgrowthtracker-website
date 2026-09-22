@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 type ActiveNavigation =
-  | "features"
-  | "how-it-works"
-  | "privacy"
-  | "support"
-  | "availability"
+  | 'features'
+  | 'how-it-works'
+  | 'privacy'
+  | 'support'
+  | 'availability'
   | null;
 
-const homeSections = ["features", "how-it-works", "availability"] as const;
+const homeSections = ['features', 'how-it-works', 'availability'] as const;
 
 /** Renders the sticky site navigation and tracks the current page or section. */
 export function SiteHeader() {
@@ -20,15 +20,15 @@ export function SiteHeader() {
     useState<ActiveNavigation>(null);
 
   useEffect(() => {
-    const pathname = window.location.pathname.replace(/\/$/, "") || "/";
+    const pathname = window.location.pathname.replace(/\/$/, '') || '/';
 
-    if (pathname !== "/") {
+    if (pathname !== '/') {
       const frame = window.requestAnimationFrame(() => {
         setActiveNavigation(
-          pathname === "/privacy"
-            ? "privacy"
-            : pathname === "/support"
-              ? "support"
+          pathname === '/privacy'
+            ? 'privacy'
+            : pathname === '/support'
+              ? 'support'
               : null,
         );
       });
@@ -52,18 +52,18 @@ export function SiteHeader() {
     };
 
     const frame = window.requestAnimationFrame(updateActiveSection);
-    window.addEventListener("scroll", updateActiveSection, { passive: true });
-    window.addEventListener("resize", updateActiveSection);
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
 
     return () => {
       window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", updateActiveSection);
-      window.removeEventListener("resize", updateActiveSection);
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
     };
   }, []);
 
   const navigationClass = (item: ActiveNavigation) =>
-    activeNavigation === item ? "is-active" : undefined;
+    activeNavigation === item ? 'is-active' : undefined;
 
   return (
     <header className="site-header">
@@ -73,49 +73,49 @@ export function SiteHeader() {
       </Link>
       <nav aria-label="Main navigation">
         <Link
-          className={navigationClass("features")}
+          className={navigationClass('features')}
           href="/#features"
           aria-current={
-            activeNavigation === "features" ? "location" : undefined
+            activeNavigation === 'features' ? 'location' : undefined
           }
-          onClick={() => setActiveNavigation("features")}
+          onClick={() => setActiveNavigation('features')}
         >
           Features
         </Link>
         <Link
-          className={navigationClass("how-it-works")}
+          className={navigationClass('how-it-works')}
           href="/#how-it-works"
           aria-current={
-            activeNavigation === "how-it-works" ? "location" : undefined
+            activeNavigation === 'how-it-works' ? 'location' : undefined
           }
-          onClick={() => setActiveNavigation("how-it-works")}
+          onClick={() => setActiveNavigation('how-it-works')}
         >
           How it works
         </Link>
         <Link
-          className={navigationClass("privacy")}
+          className={navigationClass('privacy')}
           href="/privacy"
-          aria-current={activeNavigation === "privacy" ? "page" : undefined}
-          onClick={() => setActiveNavigation("privacy")}
+          aria-current={activeNavigation === 'privacy' ? 'page' : undefined}
+          onClick={() => setActiveNavigation('privacy')}
         >
           Privacy
         </Link>
         <Link
-          className={navigationClass("support")}
+          className={navigationClass('support')}
           href="/support"
-          aria-current={activeNavigation === "support" ? "page" : undefined}
-          onClick={() => setActiveNavigation("support")}
+          aria-current={activeNavigation === 'support' ? 'page' : undefined}
+          onClick={() => setActiveNavigation('support')}
         >
           Support
         </Link>
       </nav>
       <Link
-        className={`header-cta ${navigationClass("availability") ?? ""}`}
+        className={`header-cta ${navigationClass('availability') ?? ''}`}
         href="/#availability"
         aria-current={
-          activeNavigation === "availability" ? "location" : undefined
+          activeNavigation === 'availability' ? 'location' : undefined
         }
-        onClick={() => setActiveNavigation("availability")}
+        onClick={() => setActiveNavigation('availability')}
       >
         Get the app
       </Link>
