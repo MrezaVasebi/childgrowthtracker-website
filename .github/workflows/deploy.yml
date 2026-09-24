@@ -1,4 +1,4 @@
-name: Deploy Next.js site to GitHub Pages
+name: Deploy Static Website to GitHub Pages
 
 on:
   push:
@@ -17,35 +17,42 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v5
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static website
+      - name: Build the website
         run: npm run build
 
-      - name: Upload website files
-        uses: actions/upload-pages-artifact@v3
+      - name: Find generated static output
+        run: |
+          echo "Project root:"
+          ls -la
+          echo "Possible output directories:"
+          find . -maxdepth 3 -type f -name "index.html" -not -path "*/node_modules/*" | sort
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: ./out
+          path: ./dist/client
 
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: build
 
     steps:
